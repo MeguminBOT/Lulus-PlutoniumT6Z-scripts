@@ -20,7 +20,7 @@
 init()
 {
     level.additionalprimaryweapon_limit = 3;
-    level.perk_purchase_limit = 4;
+    level.perk_purchase_limit = 9;
 
     if ( !level.createfx_enabled )
         perks_register_clientfield();
@@ -686,7 +686,7 @@ vending_weapon_upgrade_cost()
     while ( true )
     {
         self.cost = 5000;
-        self.attachment_cost = 2000;
+        self.attachment_cost = 2500;
 
         if ( isdefined( level.zombiemode_reusing_pack_a_punch ) && level.zombiemode_reusing_pack_a_punch )
             self sethintstring( &"ZOMBIE_PERK_PACKAPUNCH_ATT", self.cost );
@@ -1839,7 +1839,7 @@ vending_trigger_think()
         {
             cheat = 0;
 /#
-            if ( getdvarint( #"zombie_cheat" ) >= 5 )
+            if ( getdvarint( #"_id_FA81816F" ) >= 5 )
                 cheat = 1;
 #/
 
@@ -2112,7 +2112,7 @@ check_player_has_perk( perk )
 {
     self endon( "death" );
 /#
-    if ( getdvarint( #"zombie_cheat" ) >= 5 )
+    if ( getdvarint( #"_id_FA81816F" ) >= 5 )
         return;
 #/
     dist = 16384;
@@ -2152,7 +2152,7 @@ vending_set_hintstring( perk )
 perk_think( perk )
 {
 /#
-    if ( getdvarint( #"zombie_cheat" ) >= 5 )
+    if ( getdvarint( #"_id_FA81816F" ) >= 5 )
     {
         if ( isdefined( self.perk_hud[perk] ) )
             return;
