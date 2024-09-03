@@ -1,0 +1,41 @@
+# Ignore folders
+_random/
+bin/
+games/
+launcher/
+players/
+plutonium/
+redist/
+sound/
+video/
+zone/
+
+# Ignore certain subfolders
+storage/t4
+storage/t5
+storage/t6/demos
+storage/t6/logs
+storage/t6/players
+storage/t6/soundaliaslists
+storage/t6/ui
+storage/t6/ui_mp
+storage/t6/zone
+storage/iw5
+storage/gsc-tools
+storage/demonware
+
+# Ignore files
+start_mp_server.bat
+start_zm_server.bat
+updatePluto.bat
+binkw32.dll
+codlogo.bmp
+console.log
+imgui.ini
+info.json
+localization.txt
+localization_mp.txt
+localization_zm.txt
+pluto.sh
+plutonium.exe
+WatchDog.bat
