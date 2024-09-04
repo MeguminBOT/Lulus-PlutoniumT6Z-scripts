@@ -57,7 +57,7 @@ on_player_spawned()
 	self endon("disconnect");
     self waittill("spawned_player");
 
-	self thread shield_hud();
+	//self thread shield_hud();
 	self thread timer_hud();
 	self thread zone_hud();		
 }
