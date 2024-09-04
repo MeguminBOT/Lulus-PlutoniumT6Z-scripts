@@ -281,54 +281,53 @@ render_destroy_elem()
 	self destroyelem();
 }
 
-shield_hud()
-{
-	self endon("disconnect");
-	flag_wait("initial_blackscreen_passed");
+// shield_hud()
+// {
+// 	self endon("disconnect");
+// 	flag_wait("initial_blackscreen_passed");
 
-	shield_text = self createprimaryprogressbartext();
-	shield_text setpoint(undefined, "BOTTOM", 205, 15);
-	shield_text.hidewheninmenu = 1;
-	shield_hud = newClientHudElem(self);
-	shield_hud.alignx = "right";
-	shield_hud.aligny = "bottom";
-	shield_hud.horzalign = "user_right";
-	shield_hud.vertalign = "user_bottom";
-	shield_hud.x -= 175;
-	shield_hud.alpha = 0;
-	shield_hud.color = (1, 1, 1);
-	shield_hud.hidewheninmenu = 1;
+// 	shield_text = self createprimaryprogressbartext();
+// 	shield_text setpoint(undefined, "BOTTOM", 205, 15);
+// 	shield_text.hidewheninmenu = 1;
+// 	shield_hud = newClientHudElem(self);
+// 	shield_hud.alignx = "right";
+// 	shield_hud.aligny = "bottom";
+// 	shield_hud.horzalign = "user_right";
+// 	shield_hud.vertalign = "user_bottom";
+// 	shield_hud.x -= 175;
+// 	shield_hud.alpha = 0;
+// 	shield_hud.color = (1, 1, 1);
+// 	shield_hud.hidewheninmenu = 1;
 
-	if (getdvar("mapname") == "zm_transit") {
-		shield_hud setShader("damage_feedback", 32, 32);
-	}
+// 	if (getdvar("mapname") == "zm_transit") {
+// 		shield_hud setShader("damage_feedback", 32, 32);
+// 	}
 
-	if (getdvar("mapname") == "zm_tomb") {
-		shield_hud setShader("zm_riotshield_tomb_icon", 32, 32);
-	}
+// 	if (getdvar("mapname") == "zm_tomb") {
+// 		shield_hud setShader("zm_riotshield_tomb_icon", 32, 32);
+// 	}
 
-	if (getdvar("mapname") == "zm_prison") {
-		shield_hud setShader("zm_riotshield_hellcatraz_icon", 32, 32);
-	}
+// 	if (getdvar("mapname") == "zm_prison") {
+// 		shield_hud setShader("zm_riotshield_hellcatraz_icon", 32, 32);
+// 	}
 
-	for(;;) {
-		if (self hasweapon("riotshield_zm") || self hasweapon("alcatraz_shield_zm") || self hasweapon("tomb_shield_zm")) {
-			shield_text.alpha = 1;
-			shield_hud.alpha = 1;
-		} else {
-			shield_text.alpha = 0;
-			shield_hud.alpha = 0;
-		}
+// 	for(;;) {
+// 		if (self hasweapon("riotshield_zm") || self hasweapon("alcatraz_shield_zm") || self hasweapon("tomb_shield_zm")) {
+// 			shield_text.alpha = 1;
+// 			shield_hud.alpha = 1;
+// 		} else {
+// 			shield_text.alpha = 0;
+// 			shield_hud.alpha = 0;
+// 		}
 
-		shield_text setvalue(2500 - self.shielddamagetaken);
-		wait 0.05;
+// 		shield_text setvalue(2500 - self.shielddamagetaken);
+// 		wait 0.05;
 
-		if (self.shielddamagetaken >= 2500) {
-			shield_text.alpha = 0;
-		}
-	}
-}
-
+// 		if (self.shielddamagetaken >= 2500) {
+// 			shield_text.alpha = 0;
+// 		}
+// 	}
+// }
 
 timer_hud()
 {
