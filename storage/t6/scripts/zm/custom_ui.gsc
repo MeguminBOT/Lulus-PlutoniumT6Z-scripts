@@ -1,7 +1,16 @@
 /* Based on various scripts
 
-# Round Timer from "ZM - High Rounds / WR: Scripts" by Naomi_
-https://forum.plutonium.pw/topic/18712/zm-high-rounds-wr-scripts
+# HealthBar and Zombie Counter from "HealthBarV2" by andresito_20
+https://forum.plutonium.pw/topic/33928/gsc-zm-healthbarv2
+
+# Round Timer from "Black Ops 2 Zombies Reimagined" by Jbleezy
+https://forum.plutonium.pw/topic/29979/black-ops-2-zombies-reimagined
+
+# Location Names from "Black Ops 2 Zombies Reimagined" by Jbleezy
+https://forum.plutonium.pw/topic/29979/black-ops-2-zombies-reimagined
+
+# Zone Location Names from "Black Ops 2 Zombies Reimagined" by Jbleezy
+https://forum.plutonium.pw/topic/29979/black-ops-2-zombies-reimagined
 
 */
 
@@ -346,8 +355,6 @@ timer_hud()
 	timer_hud setTimerUp(0);
 }
 
-//// Adds a HUD element showing round time played.
-// Credits to Jbleezy
 round_timer_hud()
 {
 	self endon("disconnect");
@@ -382,8 +389,6 @@ round_timer_hud()
 	}
 }
 
-//// Adds a HUD element showing time when frozen.
-// Credits to Jbleezy
 set_time_frozen(hud, time)
 {
 	level endon( "start_of_round" );
@@ -397,8 +402,6 @@ set_time_frozen(hud, time)
 	}
 }
 
-//// Adds a HUD element showing the current zone you're in
-// Credits to Jbleezy
 zone_hud()
 {
 	self endon("disconnect");
@@ -438,8 +441,6 @@ zone_hud()
 	}
 }
 
-//// Adds a HUD element showing names for specific locations
-// Credits to Jbleezy
 get_zone_name()
 {
 	zone = self get_current_zone();
